@@ -1,0 +1,22 @@
+
+<div class="flex justify-end">
+  <button routerLink="/articles/create" type="button" class="text-white mt-4 mr-20 bg-green-500 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-200 font-medium rounded-lg text-lg px-5 py-2.5 inline-flex justify-center text-center">
+    Create article
+  </button>
+</div>
+
+<div *ngIf="!isArticlesEmpty()" class="grid grid-cols-4 ml-10 mt-6 mb-20 gap-2 justify-between">
+  <app-card-article *ngFor="let article of articles; let i = index" [article]="article"></app-card-article>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
