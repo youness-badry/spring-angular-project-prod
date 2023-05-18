@@ -20,7 +20,7 @@ export class DataService {
 
   fetchArticles() {
     this.http
-      .get('http://localhost:8080/articles')
+      .get('http://54.93.52.201:8080/articles')
       .subscribe(response => {
         this.articles = response;
       });
@@ -29,7 +29,7 @@ export class DataService {
   }
 
   saveArticle(article: any) {
-    this.http.post('http://localhost:8080/articles', article).subscribe(response => {
+    this.http.post('http://54.93.52.201:8080/articles', article).subscribe(response => {
       this.createArticleResponse = response;
     })
   }
@@ -44,7 +44,7 @@ export class DataService {
 
   fetchOrders() {
     this.http
-      .get('http://localhost:8080/orders')
+      .get('http://54.93.52.201:8080/orders')
       .subscribe(response => {
         this.orders = response;
       }, error => {
@@ -69,7 +69,7 @@ export class DataService {
   }
 
   createOrder(order: any) {
-    this.http.post('http://localhost:8080/orders', order).subscribe(response => {
+    this.http.post('http://54.93.52.201:8080/orders', order).subscribe(response => {
       this.createOrderResponse = response;
     }, error => {
 
@@ -81,7 +81,7 @@ export class DataService {
   }
 
   updateOrder(orderId: any, order: any) {
-    this.http.put(`http://localhost:8080/orders/${orderId}`, order).subscribe(response => {
+    this.http.put(`http://54.93.52.201:8080/orders/${orderId}`, order).subscribe(response => {
       this.updateOrderResponse = response;
     }, error => {
 
