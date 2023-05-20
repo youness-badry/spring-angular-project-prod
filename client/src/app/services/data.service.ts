@@ -15,7 +15,7 @@ export class DataService {
 
   private count = 9820;
 
-  private ipAdressServerPort = "35.180.234.161:8080";
+  private ipAdressServerPort = "35.180.126.226:8080";
   constructor(private http: HttpClient) {
   }
 
