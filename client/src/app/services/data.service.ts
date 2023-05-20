@@ -15,12 +15,13 @@ export class DataService {
 
   private count = 9820;
 
+  private ipAdressServerPort = "35.180.234.161:8080";
   constructor(private http: HttpClient) {
   }
 
   fetchArticles() {
     this.http
-      .get('http://13.39.156.28:8080/articles')
+      .get(`http://${this.ipAdressServerPort}/articles`)
       .subscribe(response => {
         this.articles = response;
       });
@@ -29,7 +30,7 @@ export class DataService {
   }
 
   saveArticle(article: any) {
-    this.http.post('http://13.39.156.28:8080/articles', article).subscribe(response => {
+    this.http.post(`http://${this.ipAdressServerPort}/articles`, article).subscribe(response => {
       this.createArticleResponse = response;
     })
   }
@@ -44,7 +45,7 @@ export class DataService {
 
   fetchOrders() {
     this.http
-      .get('http://13.39.156.28:8080/orders')
+      .get(`http://${this.ipAdressServerPort}/orders`)
       .subscribe(response => {
         this.orders = response;
       }, error => {
@@ -69,7 +70,7 @@ export class DataService {
   }
 
   createOrder(order: any) {
-    this.http.post('http://13.39.156.28:8080/orders', order).subscribe(response => {
+    this.http.post(`http://${this.ipAdressServerPort}/orders`, order).subscribe(response => {
       this.createOrderResponse = response;
     }, error => {
 
@@ -81,7 +82,7 @@ export class DataService {
   }
 
   updateOrder(orderId: any, order: any) {
-    this.http.put(`http://13.39.156.28:8080/orders/${orderId}`, order).subscribe(response => {
+    this.http.put(`http://${this.ipAdressServerPort}/orders/${orderId}`, order).subscribe(response => {
       this.updateOrderResponse = response;
     }, error => {
 
